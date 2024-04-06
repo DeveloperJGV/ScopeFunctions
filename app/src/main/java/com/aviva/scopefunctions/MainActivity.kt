@@ -45,6 +45,9 @@ class MainActivity : AppCompatActivity() {
         // Handle variable using 'with' scope function
         withScopeExample()
 
+        // Demonstrate the use of 'this' and 'it'
+        demostrateThisAndIt()
+
     }
 
     /**
@@ -117,6 +120,16 @@ class MainActivity : AppCompatActivity() {
         with(intent) {
             putExtra("key1", "value")
             putExtra("key2", 0)
+        }
+    }
+
+    private fun demostrateThisAndIt() {
+        // 'this' refers to the current object, which is an instance of MainActivity in this case
+        this.number = 5
+
+        // 'it' is used in lambda functions to refer to the single parameter
+        this.number?.let {
+            println("The value of number is $it")  // 'it' refers to the value of 'number'
         }
     }
 }
